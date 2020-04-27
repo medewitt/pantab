@@ -134,6 +134,7 @@ static PyObject *read_hyper_query(PyObject *Py_UNUSED(dummy), PyObject *args) {
         return NULL;
 
     // TODO: check that we get an instance of CDataObject; else will segfault
+    printf("Address of object in C extension is: %p\n", ((CDataObject *)connectionObj)->c_data);
     connection = (hyper_connection_t *)((CDataObject *)connectionObj)->c_data;
     hyper_err = hyper_execute_query(connection, query, &rowset);
     if (hyper_err) {

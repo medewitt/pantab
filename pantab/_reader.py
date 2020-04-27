@@ -35,6 +35,7 @@ def _read_table(*, connection: tab_api.Connection, table: TableType) -> pd.DataF
     query = f"SELECT * from {table}"
     dtype_strs = tuple(dtypes.values())
 
+    print(f"Connection object in Python: {connection._cdata}")
     df = pd.DataFrame(libreader.read_hyper_query(connection._cdata, query, dtype_strs))
 
     df.columns = dtypes.keys()
