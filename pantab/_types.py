@@ -18,8 +18,8 @@ _column_types = {
     "Int16": _ColumnType(tab_api.SqlType.small_int(), tab_api.Nullability.NULLABLE),
     "Int32": _ColumnType(tab_api.SqlType.int(), tab_api.Nullability.NOT_NULLABLE),
     "Int64": _ColumnType(tab_api.SqlType.big_int(), tab_api.Nullability.NOT_NULLABLE),
-    "float32": _ColumnType(tab_api.SqlType.double(), tab_api.Nullability.NULLABLE),
-    "float64": _ColumnType(tab_api.SqlType.double(), tab_api.Nullability.NULLABLE),
+    "float32": _ColumnType(tab_api.SqlType.double(), tab_api.Nullability.NOT_NULLABLE),
+    "float64": _ColumnType(tab_api.SqlType.double(), tab_api.Nullability.NOT_NULLABLE),
     "bool": _ColumnType(tab_api.SqlType.bool(), tab_api.Nullability.NOT_NULLABLE),
     "datetime64[ns]": _ColumnType(
         tab_api.SqlType.timestamp(), tab_api.Nullability.NULLABLE
