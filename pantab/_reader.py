@@ -49,7 +49,7 @@ def _read_table(*, connection: tab_api.Connection, table: TableType) -> pd.DataF
         if v == "int32":
             dtypes[k] = "object"
 
-    #df = df.astype(dtypes)
+    df = df.astype(dtypes)
     df = df.fillna(value=np.nan)  # Replace any appearances of None
 
     return df
