@@ -44,7 +44,7 @@ extra_compile_args = ["-Wextra"]
 if os.name == "nt":
     extra_compile_args = ["/WX"]
 else:
-    extra_compile_args = ["-Wextra", "-Werror"]
+    extra_compile_args = ["-Wextra", "-Werror", "-std=c99"]
 
 
 writer_module = Extension(
