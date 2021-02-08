@@ -42,6 +42,12 @@ def _read_table(*, connection: tab_api.Connection, table: TableType) -> pd.DataF
     for k, v in dtypes.items():
         if v == "date":
             dtypes[k] = "datetime64[ns]"
+    for k, v in dtypes.items():
+        if v == "Int32":
+            dtypes[k] = "object"
+    for k, v in dtypes.items():
+        if v == "int32":
+            dtypes[k] = "object"
 
     df = df.astype(dtypes)
     df = df.fillna(value=np.nan)  # Replace any appearances of None
